@@ -1,8 +1,8 @@
-package com.anshtya.kmmsample.db
+package com.anshtya.kmpsample.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.anshtya.kmmsample.model.Post
+import com.anshtya.kmpsample.model.Post
 
 @Database(
     entities = [Post::class],

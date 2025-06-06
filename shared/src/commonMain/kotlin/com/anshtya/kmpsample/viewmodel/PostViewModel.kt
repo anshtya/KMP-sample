@@ -1,9 +1,9 @@
-package com.anshtya.kmmsample.viewmodel
+package com.anshtya.kmpsample.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.anshtya.kmmsample.model.Post
-import com.anshtya.kmmsample.repository.PostRepository
+import com.anshtya.kmpsample.model.Post
+import com.anshtya.kmpsample.repository.PostRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -24,7 +24,7 @@ class PostViewModel(
     val errorMessage = _errorMessage.asStateFlow()
 
     val uiState: StateFlow<PostsUiState> = postRepository.posts
-        .catch { PostsUiState.Error(it.message) }
+        .catch { throwable -> _errorMessage.update { throwable.message } }
         .map { PostsUiState.Success(it) }
         .stateIn(
             scope = viewModelScope,
@@ -55,5 +55,4 @@ class PostViewModel(
 sealed interface PostsUiState {
     data object Loading: PostsUiState
     data class Success(val posts: List<Post>): PostsUiState
-    data class Error(val message: String?): PostsUiState
 }

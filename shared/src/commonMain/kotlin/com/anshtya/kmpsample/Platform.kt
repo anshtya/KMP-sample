@@ -1,4 +1,4 @@
-package com.anshtya.kmmsample
+package com.anshtya.kmpsample
 
 interface Platform {
     val name: String

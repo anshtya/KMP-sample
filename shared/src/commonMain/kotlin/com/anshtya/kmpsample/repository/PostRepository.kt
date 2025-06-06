@@ -1,8 +1,8 @@
-package com.anshtya.kmmsample.repository
+package com.anshtya.kmpsample.repository
 
-import com.anshtya.kmmsample.db.PostDao
-import com.anshtya.kmmsample.model.Post
-import com.anshtya.kmmsample.network.JsonApi
+import com.anshtya.kmpsample.db.PostDao
+import com.anshtya.kmpsample.model.Post
+import com.anshtya.kmpsample.network.JsonApi
 import kotlinx.coroutines.flow.Flow
 
 class PostRepository(

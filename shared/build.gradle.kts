@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
 }
@@ -32,7 +32,6 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koin.compose.viewmodel)
             implementation(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.content.negotiation)
@@ -40,11 +39,10 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.lifecycle.viewmodel)
             implementation(libs.room.runtime)
+            implementation(libs.room.ktx)
         }
         androidMain.dependencies {
-            implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.kotlinx.coroutines.android)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -67,7 +65,7 @@ room {
 }
 
 android {
-    namespace = "com.anshtya.kmmsample"
+    namespace = "com.anshtya.kmpsample"
     compileSdk = 35
     defaultConfig {
         minSdk = 26

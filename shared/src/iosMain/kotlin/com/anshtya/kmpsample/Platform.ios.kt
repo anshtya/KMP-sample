@@ -1,4 +1,4 @@
-package com.anshtya.kmmsample
+package com.anshtya.kmpsample
 
 import platform.UIKit.UIDevice
 

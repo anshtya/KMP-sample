@@ -1,9 +1,9 @@
-package com.anshtya.kmmsample.db
+package com.anshtya.kmpsample.db
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import com.anshtya.kmmsample.model.Post
+import com.anshtya.kmpsample.model.Post
 import kotlinx.coroutines.flow.Flow
 
 @Dao

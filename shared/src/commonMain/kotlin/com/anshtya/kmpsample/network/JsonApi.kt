@@ -1,6 +1,6 @@
-package com.anshtya.kmmsample.network
+package com.anshtya.kmpsample.network
 
-import com.anshtya.kmmsample.model.Post
+import com.anshtya.kmpsample.model.Post
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

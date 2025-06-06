@@ -1,4 +1,4 @@
-package com.anshtya.kmmsample
+package com.anshtya.kmpsample
 
 class Greeting {
     private val platform: Platform = getPlatform()
