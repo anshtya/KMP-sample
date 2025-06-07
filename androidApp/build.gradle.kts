@@ -41,6 +41,5 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
 }

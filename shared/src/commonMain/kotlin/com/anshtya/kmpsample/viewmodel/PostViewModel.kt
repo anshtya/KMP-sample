@@ -44,7 +44,8 @@ class PostViewModel(
         initJob = viewModelScope.launch {
             try {
                 postRepository.fetchAndStorePosts().getOrThrow()
-            } catch (_: Exception) {
+            } catch (e: Exception) {
+                println(e.message)
                 _errorMessage.update { "Failed to fetch posts" }
             }
             initJob = null

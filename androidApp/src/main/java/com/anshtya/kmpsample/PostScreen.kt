@@ -15,7 +15,6 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -23,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.anshtya.kmpsample.viewmodel.PostViewModel
 import com.anshtya.kmpsample.viewmodel.PostsUiState
 import kotlinx.coroutines.launch
@@ -32,8 +32,8 @@ import org.koin.androidx.compose.koinViewModel
 fun PostRoute(
     viewModel: PostViewModel = koinViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsState()
-    val errorMessage by viewModel.errorMessage.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val errorMessage by viewModel.errorMessage.collectAsStateWithLifecycle()
 
     PostScreen(
         uiState = uiState,
